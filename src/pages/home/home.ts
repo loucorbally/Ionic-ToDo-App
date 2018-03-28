@@ -6,9 +6,20 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
-
+todos=[
+  {
+    "Name":"Take Pingers",
+    "Finished": false
+  },
+  {
+    "Name":"Take Hash",
+    "Finished": false
+  },
+]
   constructor(public navCtrl: NavController) {
 
   }
-
+  itemSelected(todo:String) {
+    console.log("Selected Item", todo);
+  }
 }
