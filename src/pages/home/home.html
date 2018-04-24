@@ -1,16 +1,35 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>
-      To Do
+      To Do List
     </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addItem()"><ion-icon name="add-circle"></ion-icon></button>
+      
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
-
-<ion-content padding>
-  <ion-list>
-    <button ion-item *ngFor="let todo of todos" (click)="itemSelected(todo)">
-      {{ todo }}
-    </button>  
-  </ion-list>
  
+<ion-content>
+  <ion-list>
+      <ion-item-sliding #item>
+    <ion-item *ngFor="let item of items" (click)="viewItem(item)">{{item.title}}
+    </ion-item>
+    <ion-item-options >
+      <button ion-button color="secondary" (click)="more(item)">
+        <ion-icon name="menu"></ion-icon>
+        More
+      </button>
+      <button ion-button color="dark" (click)="mute(item)">
+        <ion-icon name="volume-off"></ion-icon>
+        Mute
+      </button>
+      <button ion-button color="danger" (click)="delete(item)">
+        <ion-icon name="trash"></ion-icon>
+        Delete
+      </button>
+    </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  
 </ion-content>
