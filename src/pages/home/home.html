@@ -15,6 +15,9 @@
       <ion-item-sliding *ngFor="let item of items">
  
           <ion-item (click) = "viewItem(item)">
+              <ion-avatar item-start>
+                  <img src= "{{item.thumbnail}}"/>
+                </ion-avatar>
           {{item.title}} 
           </ion-item>
        

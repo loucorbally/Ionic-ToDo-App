@@ -28,5 +28,11 @@ export class AddTodoPage {
   close(){
     this.view.dismiss();
   }
- 
+  gatherVoice(){
+    //get permission
+
+    //get spoken string
+
+    //update form
+  }
 }
