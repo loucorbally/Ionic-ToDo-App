@@ -9,6 +9,8 @@ import { HomePage } from '../pages/home/home';
 import { AddTodoPage } from '../pages/add-todo/add-todo';
 import { TodoDetailPage } from '../pages/todo-detail/todo-detail';
 import { Data } from '../providers/data/data';
+import { QuotesProvider } from '../providers/quotes/quotes';
+import { HttpClientModule } from '@angular/common/http';
  
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { Data } from '../providers/data/data';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -33,6 +36,9 @@ import { Data } from '../providers/data/data';
     StatusBar, 
     SplashScreen, 
     Data, 
-    {provide: ErrorHandler, useClass: IonicErrorHandler}]
+    
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    QuotesProvider
+  ]
 })
 export class AppModule {}

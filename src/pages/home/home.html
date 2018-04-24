@@ -12,24 +12,21 @@
  
 <ion-content>
   <ion-list>
-      <ion-item-sliding #item>
-    <ion-item *ngFor="let item of items" (click)="viewItem(item)">{{item.title}}
-    </ion-item>
-    <ion-item-options >
-      <button ion-button color="secondary" (click)="more(item)">
-        <ion-icon name="menu"></ion-icon>
-        More
-      </button>
-      <button ion-button color="dark" (click)="mute(item)">
-        <ion-icon name="volume-off"></ion-icon>
-        Mute
-      </button>
-      <button ion-button color="danger" (click)="delete(item)">
-        <ion-icon name="trash"></ion-icon>
-        Delete
-      </button>
-    </ion-item-options>
-    </ion-item-sliding>
-  </ion-list>
-  
-</ion-content>
+      <ion-item-sliding *ngFor="let item of items">
+ 
+          <ion-item (click) = "viewItem(item)">
+          {{item.title}} 
+          </ion-item>
+       
+          <ion-item-options>
+            <button danger (click)="delete(item)">Delete</button>
+          </ion-item-options>
+        </ion-item-sliding>
+
+
+        <ion-footer>
+            <ion-toolbar >
+               
+              <ion-title >{{quote}}</ion-title>
+            </ion-toolbar>
+          </ion-footer>
